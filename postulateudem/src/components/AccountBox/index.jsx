@@ -18,8 +18,8 @@ width: 100%;
 height: 200px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
 padding: 0 1.8rem;
+padding-top: 100px;
 padding-bottom: 5em;
 `;
 
@@ -41,11 +41,40 @@ background: linear-gradient(
 );
 `;
 
+const HeaderContainer = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+`;
+
+const HeaderText = styled.h2`
+font-size: 40px;
+font-weight: 600;
+line-height: 1.24;
+margin: 0;
+color: #fff;
+z-index: 10;
+`;
+
+const SubheaderText = styled.h2`
+font-size: 15px;
+font-weight: 550;
+line-height: 1.24;
+margin: 0;
+padding-top: 5px;
+color: #fff;
+z-index: 10;
+`;
+
 export function AccountBox(props)
 {
     return <BoxContainer>
                 <TopContainer>
                     <BackDrop/>
+                    <HeaderContainer>
+                        <HeaderText> Bienvenido </HeaderText>
+                        <SubheaderText> Ingresa a tu cuenta.</SubheaderText>
+                    </HeaderContainer>
                 </TopContainer>
             </BoxContainer>
 }

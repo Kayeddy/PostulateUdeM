@@ -1,4 +1,5 @@
 import './App.css';
+import './particles.js';
 import styled from 'styled-components';
 import { AccountBox } from './components/AccountBox';
 
