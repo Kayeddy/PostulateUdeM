@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { StudentForm } from './studentLoginForm';
-import { EnterpriseForm } from './enterpriseLoginForm';
+import { EnterpriseForm } from './EnterpriseLoginForm';
 import { AdminForm } from './adminLoginForm';
 
 const BoxContainer = styled.div`

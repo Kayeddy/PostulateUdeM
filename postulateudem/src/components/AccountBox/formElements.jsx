@@ -25,6 +25,16 @@ cursor: pointer;
 padding-left: 2px;
 `;
 
+export const BoldedLink = styled.a`
+font-size: 14px;
+color: rgba(200, 200, 200, 0.8);
+font-weight: 600;
+margin: 5px auto;
+text-decoration: none;
+cursor: pointer;
+padding-left: 2px;
+`;
+
 export const Input = styled.input`
 width: 100%;
 height: 42px;
@@ -48,10 +58,10 @@ transition: all 200ms ease-in-out;
 }
 @keyframes glow {
     0% {
-		box-shadow: 0 0 4px rgba(241, 196, 15, 0.8);
+		box-shadow: 0 0 4px rgba(194, 12, 25, 0.8);
     }	
     100% {
-		box-shadow: 0 0 20px rgba(241, 196, 15, 0.8);
+		box-shadow: 0 0 20px rgba(194, 12, 25, 0.8);
     }
 }
 `;
