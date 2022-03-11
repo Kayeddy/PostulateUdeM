@@ -37,12 +37,7 @@ position: absolute;
 display: flex;
 flex-direction: column;
 border-radius: 50%;
-background: rgb(241, 196, 15);
-background: linear-gradient(
-    58deg, 
-    rgba(241, 196, 15, 1),
-    rbga(243, 172, 18, 1)
-);
+background: rgb(194, 12, 25);
 `;
 
 const HeaderContainer = styled.div`

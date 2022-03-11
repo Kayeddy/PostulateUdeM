@@ -22,6 +22,7 @@ font-weight: 500;
 margin: 5px auto;
 text-decoration: none;
 cursor: pointer;
+padding-left: 2px;
 `;
 
 export const Input = styled.input`
@@ -66,11 +67,6 @@ border: none;
 border-radius: 100px 100px 100px 100px;
 cursor: pointer;
 transition: all, 240ms ease-in-out;
-background: rgb(241, 196, 15);
-background: linear-gradient(
-    58deg, 
-    rgba(241, 196, 15, 1),
-    rbga(243, 172, 18, 1)
-);
+background: rgb(194, 12, 25);
 `;
 
