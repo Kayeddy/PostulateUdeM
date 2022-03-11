@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { LoginForm } from './adminLoginForm';
-import { StudentForm } from './studentLoginForm';
 import { motion } from 'framer-motion';
+import { StudentForm } from './studentLoginForm';
+import { EnterpriseForm } from './enterpriseLoginForm';
+import { AdminForm } from './adminLoginForm';
 
 const BoxContainer = styled.div`
 width: 260px;
@@ -21,8 +22,9 @@ width: 100%;
 height: 120px;
 display: flex;
 flex-direction: column;
-padding: 0 1.8rem;
-padding-top: 100px;
+padding-top: 60px;
+padding-left: 10px;
+padding-bottom: 1.8em;
 `;
 
 const BackDrop = styled(motion.div)`
@@ -63,8 +65,19 @@ font-size: 15px;
 font-weight: 550;
 line-height: 1.24;
 margin: 0;
-padding-top: 5px;
 color: #fff;
+z-index: 10;
+`;
+
+export const CurrentActiveUser = styled.h2`
+width: 100%;
+font-size: 20px;
+font-weight: 600;
+line-height: 1.24;
+margin: 0;
+padding: 0px 5%;
+color: #fff;
+transform: translate(22%, -55px);
 z-index: 10;
 `;
 
@@ -76,6 +89,22 @@ align-items: center;
 justify-content: center;
 padding: 0 15px;
 `;
+
+export const ChangeUserButton = styled.button`
+width: 15%;
+z-index: 10;
+transform: translate(190px, -80px);
+color: #aaa;
+font-size: 15px;
+font-weight: 600;
+border: none;
+border-radius: 100px 100px 100px 100px;
+cursor: pointer;
+transition: all, 240ms ease-in-out;
+background: rgb(255, 255, 255);
+`;
+
+
 
 const backDropVariants = 
 {
@@ -98,7 +127,8 @@ const backDropVariants =
 export function AccountBox(props)
 {
     const [isExpanded, setExpanded] = useState(false);
-    const [active, setActive] = useState("Student");
+    const [active, setActive] = useState("Estudiante");
+    const users = ["Estudiante", "Empresa", "Admin"];
 
     const playExpandingAnimation = () =>
     {
@@ -113,31 +143,31 @@ export function AccountBox(props)
         playExpandingAnimation();
         setTimeout(() =>
         {
-            if(active === "student")
-            setActive("Enterprise");
-            else if(active === "Enterprise")
-            setActive("Admin");
+            if(active === users[0])
+            setActive(users[1]);
+            else if(active === users[1])
+            setActive(users[2]);
             else 
-            setActive("Student")
+            setActive(users[0])
         }, 200);
     }
 
-    const contextValue = 
-    {
-        switchUser
-    }
-    return <AccountContext.provider value={contextValue}>
-                <BoxContainer>
-                    <TopContainer>
-                        <BackDrop initial={false} animate={isExpanded ? "expanded" : "collapsed"} variants={backDropVariants}/>
-                        <HeaderContainer>
-                            <HeaderText> Bienvenido </HeaderText>
-                            <SubheaderText> Ingresa a tu cuenta.</SubheaderText>
-                        </HeaderContainer>
-                    </TopContainer>
-                    <InnerContainer> 
-                        <StudentForm />
-                    </InnerContainer>
-                </BoxContainer>
-            </AccountContext.provider>
+    return <BoxContainer>
+                <TopContainer>
+                    <BackDrop initial={false} animate={isExpanded ? "expanded" : "collapsed"} variants={backDropVariants}/>
+                    <HeaderContainer>
+                        <CurrentActiveUser> {active} </CurrentActiveUser>
+                        <ChangeUserButton onClick={switchUser}>➯</ChangeUserButton>
+                        <HeaderText> Bienvenido </HeaderText>
+                        <SubheaderText> Ingresa a tu cuenta.</SubheaderText>
+                    </HeaderContainer>
+                </TopContainer>
+                <InnerContainer> 
+                    {active === users[0] && <StudentForm />}
+                    {active === users[1] && <EnterpriseForm />}
+                    {active === users[2] && <AdminForm />}
+                </InnerContainer>
+            </BoxContainer>
+                
+            
 }

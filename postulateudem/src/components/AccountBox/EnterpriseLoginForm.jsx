@@ -1,7 +1,7 @@
 import React from "react";
 import {BoxContainer, FormContainer, Input, SubmitButton, MutedLink} from "./formElements";
 
-export function LoginForm(props)
+export function EnterpriseForm(props)
 {
     return <BoxContainer>
                 <FormContainer>

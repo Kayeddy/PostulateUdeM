@@ -1,5 +1,5 @@
 import React from "react";
-import {BoxContainer, FormContainer, Input, SubmitButton, MutedLink} from "./formElements";
+import {BoxContainer, FormContainer, Input, SubmitButton} from "./formElements";
 
 export function AdminForm(props)
 {
