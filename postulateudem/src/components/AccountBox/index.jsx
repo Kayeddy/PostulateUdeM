@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { StudentForm } from './studentLoginForm';
 import { EnterpriseForm } from './EnterpriseLoginForm';
 import { AdminForm } from './adminLoginForm';
+import { EnterpriseSignupForm } from './EnterpriseSignupForm';
 
 const BoxContainer = styled.div`
 width: 260px;
@@ -158,6 +159,7 @@ export function AccountBox(props)
                     </HeaderContainer>
                 </TopContainer>
                 <InnerContainer> 
+                    {active === "EnterpriseSignup" && <EnterpriseSignupForm/>}
                     {active === users[0] && <StudentForm />}
                     {active === users[1] && <EnterpriseForm />}
                     {active === users[2] && <AdminForm />}
