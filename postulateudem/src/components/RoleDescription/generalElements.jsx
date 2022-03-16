@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const StudentBlob = styled.div`
+export const Blob = styled.div`
 width: 500px;
 height: 500px;
 background-size: cover;
@@ -11,4 +11,18 @@ background-image: url("data:image/svg+xml;utf8, %3Csvg width=%22100%25%22 height
 
 export const StudentImage = styled.img`
 position: absolute;
+width: 500px;
+height: 500px;
+`;
+
+export const EnterpriseImage = styled.img`
+position: absolute;
+width: 400px;
+height: 400px;
+`;
+
+export const AdminImage = styled.img`
+position: absolute;
+width: 500px;
+height: 500px;
 `;

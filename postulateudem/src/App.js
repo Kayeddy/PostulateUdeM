@@ -6,7 +6,7 @@ import styled from 'styled-components';
 //components
 import { AccountBox } from './components/AccountBox';
 import { Navigation } from './components/Navigation';
-import { StudentBlob } from './components/RoleDescription/blobs';
+import { Roles } from './components/RoleDescription';
 
 const AppContainer = styled.div`
 width: 100%;
@@ -27,7 +27,7 @@ justify-content: center;
 `;
 
 const InputSection = styled.div`
-width: 50%;
+width: 40%;
 height: 100%;
 display: flex;
 flex-direction: column;
@@ -54,7 +54,7 @@ function App() {
               </InputSection>
 
               <InfoSection>
-                <StudentBlob/>
+                <Roles/>
               </InfoSection>
           </DataContainer>
             
