@@ -17,12 +17,12 @@ height: 400px;
 
 export const EnterpriseImage = styled.img`
 position: absolute;
-width: 400px;
-height: 400px;
+width: 300px;
+height: 320px;
 `;
 
 export const AdminImage = styled.img`
 position: absolute;
-width: 500px;
-height: 500px;
+width: 50px;
+height: 50px;
 `;

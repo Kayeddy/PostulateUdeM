@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container  = styled.div`
+z-index: 10;
 width: 100%;
 height: 1%;
 background: #C20C19;
