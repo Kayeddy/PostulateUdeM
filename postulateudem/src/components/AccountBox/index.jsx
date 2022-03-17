@@ -241,7 +241,7 @@ const infoBackDropVariants =
         width: "55%",
         position: "absolute",
         top: "50px",
-        height: "80%",
+        height: "97%",
         transform: "translateX(10px)"
     },
     collapsed:
