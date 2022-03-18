@@ -1,8 +1,9 @@
 import './App.css';
 import styled from 'styled-components';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 //components
-import { AccountBox } from './components/AccountBox';
+import { AccountBox, HomePage } from './components/HomePage';
 import { Navigation } from './components/Navigation';
 
 const AppContainer = styled.div`
@@ -15,10 +16,21 @@ justify-content: center;
 `;
 
 function App() {
-  return <AppContainer>
-              <Navigation/>
-              <AccountBox />
-          </AppContainer>;
+  return (
+    <>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={
+          <AppContainer>
+          <Navigation/>
+          <HomePage/>
+        </AppContainer>
+        }/>
+      </Routes>
+    </Router>
+        
+    </>
+  ); 
 }
 
 export default App;

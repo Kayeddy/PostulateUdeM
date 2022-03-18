@@ -110,6 +110,7 @@ background: rgb(194, 12, 25);
 const InfoBackDrop = styled(motion.div)`
 width: 10px;
 height: 100%;
+z-index: 10;
 top: 50px;
 left: 770px;
 position: absolute;
@@ -169,7 +170,6 @@ font-weight: 600;
 line-height: 1.24;
 margin: 0;
 color: #000;
-z-index: 10;
 `;
 
 const List = styled.ul`
@@ -238,23 +238,23 @@ const infoBackDropVariants =
 {
     expanded: 
     {
-        width: "55%",
+        width: "54%",
         position: "absolute",
-        top: "50px",
-        height: "97%",
+        top: "76px",
+        height: "92%",
         transform: "translateX(10px)"
     },
     collapsed:
     {
         position: "absolute",
-        top: "50px",
+        top: "76px",
         left: "770px",
         width: "0px",
-        height: "100%",
+        height: "92%",
     }
 };
 
-export function AccountBox(props)
+export function HomePage(props)
 {
     const [isExpanded, setExpanded] = useState(false);
     const [active, setActive] = useState("Estudiante");
@@ -331,11 +331,8 @@ export function AccountBox(props)
                                     {active === "Empresa" && <>
                                     <InfoHeaderText> Instrucciones a seguir para empresas: </InfoHeaderText>
                                     <List>
-                                        <ListBullet><DescriptionText> Ingrese el número de identificación sin puntos ni comas.  </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> La contraseña corresponde a su fecha de nacimiento, escrito en formato dd/mm/aaaa. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Si cambiaste la clave en algun momento, ingresa tu nueva clave. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Si usaste el servicio de "Olvide mi clave", entonces ingresa la nueva clave asignada por el sistema. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Abajo pudes solicitar una contraseña nueva o ser asignado uno provisional. </DescriptionText></ListBullet>
+                                        <ListBullet><DescriptionText> Ingrese el NIT y la Razón Social de la empresa.  </DescriptionText></ListBullet>
+                                        <ListBullet><DescriptionText> Si no se ha registrado como empresa proceda a hacerlo tocando el botón abajo. </DescriptionText></ListBullet>
                                     </List>
                                     </>}
 
@@ -343,17 +340,13 @@ export function AccountBox(props)
                                     <InfoHeaderText> Instrucciones a seguir para administradores: </InfoHeaderText>
                                     <List>
                                         <ListBullet><DescriptionText> Ingrese el número de identificación sin puntos ni comas.  </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> La contraseña corresponde a su fecha de nacimiento, escrito en formato dd/mm/aaaa. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Si cambiaste la clave en algun momento, ingresa tu nueva clave. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Si usaste el servicio de "Olvide mi clave", entonces ingresa la nueva clave asignada por el sistema. </DescriptionText></ListBullet>
-                                        <ListBullet><DescriptionText> Abajo pudes solicitar una contraseña nueva o ser asignado uno provisional. </DescriptionText></ListBullet>
+                                        <ListBullet><DescriptionText> La contraseña es la que le fue asignada por el sistema. </DescriptionText></ListBullet>
                                     </List>
                                     </>}
                                    
                                 </TextContainer>
                     </MainContainer>
                 </InfoSection>
-
             </DataContainer>
             
     </>
